@@ -1,31 +1,27 @@
 package com.example.Weather;
 
 public class Weather {
-    String city;
-    int tempMin;
-    int tempMax;
-    String windDirect;
-    int id;
-    int windSpeed;
-    boolean ready = false;
+
     String date;
+    int lowTemp;
+    int maxTemp;
+    int windSpeed;
+    String windDirect;
+    int weatherCode;
+    String weatherDescription;
 
-    Weather(int id, String city, int tempMin, int tempMax, int windSpeed, String windDirect, String date) {
-        this.id = id;
-        this.city = city;
-        this.tempMin = tempMin;
-        this.tempMax = tempMax;
-        this.windDirect = windDirect;
-        this.windSpeed = windSpeed;
+    Weather(String date, int lowTemp, int maxTemp, int windSpeed, String windDirect, int weatherCode, String weatherDescription) {
         this.date = date;
-    }
-
-    Weather(String city) {
-        this.city = city;
+        this.lowTemp = lowTemp;
+        this.maxTemp = maxTemp;
+        this.windSpeed = windSpeed;
+        this.windDirect = windDirect;
+        this.weatherCode = weatherCode;
+        this.weatherDescription = weatherDescription;
     }
 
     @Override
     public String toString() {
-        return city;
+        return date + "\n" + (lowTemp) + " " + (maxTemp) + "\n" + windSpeed + "\n" + windDirect;
     }
 }
